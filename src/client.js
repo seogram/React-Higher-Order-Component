@@ -1,14 +1,15 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import reducers from './reducers/index';
 import { render } from 'react-dom';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import dashboard from './components/pages/dashboard';
+import moreless from './components/pages/HOC-More-Less';
+import filter from './components/pages/HOC-Instant-Search';
+import spinner from './components/pages/HOC-Spinner';
+import sort from './components/pages/HOC-sort';
+import scroll from './components/pages/HOC-Infinite-scroll';
 import Main from './main';
 import NotFound from './components/pages/NotFound';
 
@@ -19,7 +20,11 @@ const Routes = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={Main}>
-        <IndexRoute component={dashboard} />
+        <IndexRoute component={moreless} />
+        <Route path="filter" component={filter}/>
+        <Route path="spinner" component={spinner}/>
+        <Route path="sort" component={sort}/>
+        <Route path="scroll" component={scroll}/>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
