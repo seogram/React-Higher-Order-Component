@@ -34,7 +34,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
     "jest-cli": "^20.0.4",
-    "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
     "nodemon": "^1.12.1",
     "react-addons-test-utils": "^0.14.7",
